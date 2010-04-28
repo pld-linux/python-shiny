@@ -1,13 +1,18 @@
+%define		bzrrev	4
+%define		rel		1
 %define 	module	shiny
 Summary:	A collection of decorators to make your programs more shiny
 Name:		python-%{module}
 Version:	0.1
-Release:	1
+Release:	1.%{bzrrev}.%{rel}
 License:	BSD
 Group:		Development/Languages/Python
-Source0:	http://pypi.python.org/packages/source/s/shiny/shiny-%{version}.tar.gz
-# Source0-md5:	9a16cb60c1e2cfaa9f70e1b51019d96a
-URL:		http://pypi.python.org/pypi/shiny
+# bzr branch lp:~alsuren/python-shiny/shiny
+# tar --exclude-vcs -cjf spyke-$(bzr revno spyke).tar.bz2 spyke
+# ../dropin spyke-$(bzr revno spyke).tar.bz2
+Source0:	shiny-4.tar.bz2
+# Source0-md5:	6b4a80afe4328e4c3d8a750b1532fcd9
+URL:		https://code.launchpad.net/python-shiny
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -19,7 +24,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This module really is very shiny.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{module}
 
 %build
 %{__python} setup.py build
