@@ -14,6 +14,8 @@ Source0:	shiny-4.tar.bz2
 # Source0-md5:	6b4a80afe4328e4c3d8a750b1532fcd9
 URL:		https://code.launchpad.net/python-shiny
 BuildRequires:	python-devel
+BuildRequires:	python-devel-tools
+BuildRequires:	python-distribute
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-modules
