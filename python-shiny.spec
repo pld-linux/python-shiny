@@ -29,13 +29,11 @@ This module really is very shiny.
 %setup -q -n %{module}
 
 %build
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__python} setup.py install \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/shiny/test.py*
 
